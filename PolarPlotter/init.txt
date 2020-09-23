@@ -1,0 +1,143 @@
+'this is the initialization file for the calculator
+'and the langauge is vbscript
+'feel free to add your own functions, constants etc
+'By : Mahdi eghbalahmadi
+'     eghbalahmadi@yahoo.com
+'     eghbal1309@yahoo.com
+'    February 2005 Malayer-Iran
+
+const pi=3.141592653589
+const e=2.71828182845905
+
+function lg(n)
+	lg=log(n)/log(2)
+end function
+
+function c(n,k)	
+	redim m(n,n)
+	m(0,0)=1
+	for i=1 to n
+		m(i,i)=1
+		m(i,0)=1
+		for j=1 to i-1
+			m(i,j)=m(i-1,j)+m(i-1,j-1)
+		next
+	next
+	c=m(n,k)	
+end function
+
+function fact(n)
+	if n=0 then
+		fact=1
+	else
+		r=n
+		for i=2 to n-1
+			r=r*i
+		next
+		fact=r
+	end if
+end function
+
+function p(x,y)
+	p=fact(x)/(fact(x-y)*fact(y))
+end function
+		
+function ln(x)
+	ln=log(x)
+end function
+
+function logb(x,b)
+	logb=log(x)/log(b)	
+end function
+
+function fib(n)
+	a=1
+	b=1
+	d=0
+	for i=2 to n
+		d=a+b
+		a=b
+		b=d
+	next
+	fib=d
+end function
+
+function sec(X)
+	sec= 1 / Cos(X) 
+end function  
+
+function cosec(X)
+	cosec=1 / Sin(X)
+end function
+
+function Cotan(X) 
+	cotan=1 / Tan(X)
+end function
+
+function Arcsin(X)  
+	arcsin=Atn(X / Sqr(-X * X + 1))
+end function
+
+function Arccos(X) 
+	Arccos=Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1) 
+end function
+
+function Arcsec(X) 
+	Arcsec=Atn(X / Sqr(X * X - 1)) + Sgn((X) -1) * (2 * Atn(1)) 
+end function
+
+function Arccosec(X) 
+	Arccosec=Atn(X / Sqr(X * X - 1)) + (Sgn(X) - 1) * (2 * Atn(1)) 
+end function
+
+function Arccotan(X) 
+	Arccotan=Atn(X) + 2 * Atn(1) 
+end function
+
+function HSin(X) 
+	HSin=(Exp(X) - Exp(-X)) / 2  
+end function
+
+function HCos(X) 
+	HCos=(Exp(X) + Exp(-X)) / 2 
+end function
+
+function HTan(X) 
+	HTan=(Exp(X) - Exp(-X)) / (Exp(X) + Exp(-X)) 
+end function
+
+function HSec(X) 
+ HSec=2 / (Exp(X) + Exp(-X)) 
+end function
+
+function HCosec(X)
+	HCosec=2 / (Exp(X) - Exp(-X)) 
+end function
+
+function HCotan(X)
+	HCotan=(Exp(X) + Exp(-X)) / (Exp(X) - Exp(-X)) 
+end function
+
+function HArcsin(X) 
+	HArcsin=Log(X + Sqr(X * X + 1)) 
+end function
+
+function HArccos(X) 
+	HArccos=Log(X + Sqr(X * X - 1)) 
+end function
+
+function HArctan(X) 
+	HArctan=Log((1 + X) / (1 - X)) / 2 
+end function
+
+function HArcsec(X) 
+	HArcsec=Log((Sqr(-X * X + 1) + 1) / X) 
+end function
+
+function HArccosec(X) 
+	HArccosec=Log((Sgn(X) * Sqr(X * X + 1) +1) / X) 
+end function
+
+function HArccotan(X)
+	HArccotan=Log((X + 1) / (X - 1)) / 2 
+end function
